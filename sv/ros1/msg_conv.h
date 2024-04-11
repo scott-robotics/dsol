@@ -5,7 +5,7 @@
 #include <sensor_msgs/PointCloud2.h>
 
 #include <opencv2/core/core.hpp>
-#include <sophus/se3.hpp>
+#include <sv/sophus/se3.hpp>
 
 namespace sv {
 

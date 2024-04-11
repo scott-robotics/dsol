@@ -2,7 +2,7 @@
 
 #include <absl/types/span.h>
 
-#include <sophus/se3.hpp>
+#include <sv/sophus/se3.hpp>
 
 #include "sv/dsol/camera.h"
 #include "sv/dsol/dim.h"

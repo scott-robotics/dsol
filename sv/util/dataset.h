@@ -4,7 +4,7 @@
 
 #include <array>
 #include <opencv2/core/mat.hpp>
-#include <sophus/se3.hpp>
+#include <sv/sophus/se3.hpp>
 
 #include "sv/util/poly.h"
 

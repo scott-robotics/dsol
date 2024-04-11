@@ -37,7 +37,6 @@ find_package(absl REQUIRED)
 find_package(Boost REQUIRED) # circular buffer
 
 find_package(Eigen3 REQUIRED)
-find_package(Sophus REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(xtensor) # reading npy
 

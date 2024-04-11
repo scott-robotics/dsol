@@ -7,4 +7,4 @@ cc_library(
 cc_library(
   NAME ros1_msg_conv
   SRCS "msg_conv.cpp"
-  DEPS sv_base sv_ros1 Eigen3::Eigen Sophus::Sophus)
+  DEPS sv_base sv_ros1 Eigen3::Eigen sv_sophus)

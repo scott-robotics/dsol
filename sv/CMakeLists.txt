@@ -8,6 +8,7 @@ if(BUILD_VECTORIZE)
   target_compile_options(sv_base INTERFACE "-march=native")
 endif()
 
+add_subdirectory(sophus)
 add_subdirectory(util)
 add_subdirectory(dsol)
 
