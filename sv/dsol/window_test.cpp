@@ -1,6 +1,5 @@
 #include "sv/dsol/window.h"
 
-#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 namespace sv::dsol {
@@ -78,7 +77,11 @@ TEST(RotateTest, TestStableRotate) {
 
     //        p
     // [0, 2, 3, 4, 1]
-    ASSERT_THAT(x, ::testing::ElementsAre(0, 2, 3, 4, 1));
+    ASSERT_EQ(x[0], 0);
+    ASSERT_EQ(x[1], 2);
+    ASSERT_EQ(x[2], 3);
+    ASSERT_EQ(x[3], 4);
+    ASSERT_EQ(x[4], 1);
   }
 
   {
@@ -90,7 +93,11 @@ TEST(RotateTest, TestStableRotate) {
 
     //        p
     // [0, 1, 3, 4, 2]
-    ASSERT_THAT(x, ::testing::ElementsAre(0, 1, 3, 4, 2));
+    ASSERT_EQ(x[0], 0);
+    ASSERT_EQ(x[1], 1);
+    ASSERT_EQ(x[2], 3);
+    ASSERT_EQ(x[3], 4);
+    ASSERT_EQ(x[4], 2);
   }
 
   {
@@ -102,7 +109,11 @@ TEST(RotateTest, TestStableRotate) {
 
     //        p
     // [1, 2, 3, 4, 0]
-    ASSERT_THAT(x, ::testing::ElementsAre(1, 2, 3, 4, 0));
+    ASSERT_EQ(x[0], 1);
+    ASSERT_EQ(x[1], 2);
+    ASSERT_EQ(x[2], 3);
+    ASSERT_EQ(x[3], 4);
+    ASSERT_EQ(x[4], 0);
   }
 }
 
