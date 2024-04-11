@@ -42,7 +42,7 @@ class SummaryBase {
   /// @brief Merge stats given name, create a new one if name is new.
   /// @details Thread-safe
   /// @note Use string_view because absl::*_map supports heterogenous lookup
-  void Merge(std::string_view name, const StatsT& stats) {
+  void Merge(const std::string& name, const StatsT& stats) {
     if (!stats.ok()) return;
     std::unique_lock lock{mutex_};
     stats_dict_[name] += stats;
@@ -50,7 +50,7 @@ class SummaryBase {
 
   /// @brief Add new data to stats given name, create a new one if name is new.
   /// @details Thread-safe
-  void Add(std::string_view name, const T& val) {
+  void Add(const std::string& name, const T& val) {
     std::unique_lock lock{mutex_};
     stats_dict_[name].Add(val);
   }
@@ -58,7 +58,7 @@ class SummaryBase {
   /// @brief Get stats under name
   /// @details Thread-safe
   /// @return Copy of stats if found, otherwise returns empty stats
-  StatsT GetStats(std::string_view name) const {
+  StatsT GetStats(const std::string& name) const {
     std::shared_lock lock{mutex_};
     const auto it = stats_dict_.find(name);
     if (it != stats_dict_.end()) return it->second;
@@ -109,7 +109,7 @@ class StatsSummary final : public SummaryBase<double> {
   using SummaryBase::SummaryBase;
 
   /// @brief Get stats by name
-  StatsT& GetRef(std::string_view name) { return stats_dict_[name]; }
+  StatsT& GetRef(const std::string& name) { return stats_dict_[name]; }
 
   std::string ReportStats(const std::string& name,
                           const StatsT& stats) const override;

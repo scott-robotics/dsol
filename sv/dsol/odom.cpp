@@ -17,7 +17,7 @@ TimerSummary ts{"dsol"};
 StatsSummary ss{"dsol"};
 
 TimerSummary::StatsT SumStatsStartWith(const TimerSummary& tm,
-                                       std::string_view start) {
+                                       const std::string& start) {
   TimerSummary::StatsT stats;
   absl::Duration time;
 

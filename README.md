@@ -51,8 +51,22 @@ roslaunch dsol dsol_data.launch tbb:=1 log:=5
 
 ## Dependencies and Install instructions
 
+### Linux
 See CMakeLists.txt for dependencies. You may also check our [Github Action build
 file](https://github.com/versatran01/dsol/blob/main/.github/workflows/build.yaml) for instructions on how to build DSOL in Ubuntu 20.04 with ROS Noetic.
+
+### Mac
+```bash
+brew install \
+  opencv \
+  abseil \
+  glog \
+  fmt \
+  tbb \
+  sophus \
+  xtensor \
+  google-benchmark
+```
 
 ## Disclaimer
 
